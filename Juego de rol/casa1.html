@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa 1</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe4b5;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .familia {
+            font-size: 100px;
+            color: #007BFF;
+        }
+        .boton {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .boton:hover {
+            background-color: #0056b3;
+        }
+        .info-cuadro {
+            display: none;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            color: #333;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            max-width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #333;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function mostrarInformacion() {
+            document.getElementById('info-cuadro').style.display = 'block';
+        }
+        function interactuarFamilia() {
+            alert("La familia Ramírez te da la bienvenida.");
+        }
+        function mirarObjeto() {
+            alert("Encuentras un reloj antiguo sobre la mesa.");
+        }
+    </script>
+</head>
+<body>
+    <h1>Bienvenido a la Casa 1</h1>
+    <span class="material-icons familia">family_restroom</span>
+    <p>Conoces a la familia Ramírez.</p>
+    <button class="boton" onclick="interactuarFamilia()">Hablar con la familia</button>
+    <button class="boton" onclick="mirarObjeto()">Mirar un objeto</button>
+    <button class="boton" onclick="mostrarInformacion()">Información de la familia</button>
+    <div id="info-cuadro" class="info-cuadro">
+        <h3>Familia Ramírez</h3>
+        <p><strong>Jefe del hogar:</strong> Carlos Ramírez</p>
+        <p><strong>Enfermedades:</strong> Ninguna</p>
+        <p><strong>Discapacidades:</strong> Ninguna</p>
+        <p><strong>Estado general:</strong> Saludable y feliz</p>
+    </div>
+    <a href="index.html">Volver a las casas</a>
+</body>
+</html>

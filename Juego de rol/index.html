@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal - Casas y Familias</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9; /* Color de fondo suave */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h1 {
+            color: #00796b; /* Verde para el título */
+            margin-top: 50px;
+            font-size: 3em;
+        }
+        .contenedor {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .icono-casa, .icono-centro {
+            font-size: 50px;
+            padding: 20px;
+            background-color: #00796b; /* Color verde */
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            text-decoration: none;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .icono-casa:hover, .icono-centro:hover {
+            background-color: #004d40; /* Verde más oscuro al pasar el mouse */
+            transform: scale(1.1);
+        }
+        .icono-casa {
+            background-color: #4caf50; /* Verde claro para las casas */
+        }
+        .icono-casa:hover {
+            background-color: #388e3c; /* Verde más oscuro al pasar el mouse */
+        }
+        .boton-regresar {
+            margin-top: 40px;
+            padding: 12px 25px;
+            font-size: 18px;
+            background-color: #00796b;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .boton-regresar:hover {
+            background-color: #004d40;
+        }
+        footer {
+            background-color: #00796b;
+            color: white;
+            padding: 15px;
+            margin-top: 40px;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bienvenido a la Página Principal</h1>
+
+    <div class="contenedor">
+        <!-- Icono de Casas -->
+        <a href="explorar_todo.html" class="icono-casa">
+            🏠
+        </a>
+
+        <!-- Icono de Centro de Salud -->
+        <a href="centro_salud.html" class="icono-centro">
+            🏥
+        </a>
+    </div>
+
+    <a href="explorar_todo.html" class="boton-regresar">Regresar a la Página Principal</a>
+
+    <footer>
+        <p>Información adicional:</p>
+        <a href="acerca_de.html">Acerca de</a> |
+        <a href="contacto.html">Contacto</a>
+    </footer>
+</body>
+</html>

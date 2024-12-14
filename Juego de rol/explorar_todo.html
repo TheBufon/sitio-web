@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorar Todas las Casas</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        #map {
+            height: 300px; /* Mapa más pequeño */
+            width: 100%;
+            margin-top: 20px;
+        }
+        .leaflet-popup-content {
+            font-size: 16px;
+        }
+        .leaflet-popup-content a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .leaflet-popup-content a:hover {
+            text-decoration: underline;
+        }
+        .boton-regresar {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .boton-regresar:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mapa Interactivo: Explora las Casas</h1>
+    <div id="map"></div>
+
+    <a href="index.html" class="boton-regresar">Regresar a la Página Principal</a>
+
+    <script>
+        // Crear el mapa centrado en una ubicación inicial
+        var map = L.map('map').setView([19.4326, -99.1332], 13); // Coordenadas de Ciudad de México
+
+        // Añadir capa de mapa
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Función para agregar marcadores y enlaces
+        function agregarMarcador(lat, lon, nombre, casaUrl) {
+            var marcador = L.marker([lat, lon]).addTo(map);
+            marcador.bindPopup('<b>' + nombre + '</b><br><a href="' + casaUrl + '" target="_blank">Visitar</a>');
+        }
+
+        // Agregar las casas como marcadores
+        agregarMarcador(19.4326, -99.1332, 'Casa 1', 'casa1.html');  // Coordenadas para Casa 1
+        agregarMarcador(19.4226, -99.1422, 'Casa 2', 'casa2.html');  // Coordenadas para Casa 2
+        agregarMarcador(19.4456, -99.1572, 'Casa 3', 'casa3.html');  // Coordenadas para Casa 3
+        agregarMarcador(19.4486, -99.1732, 'Casa 4', 'casa4.html');  // Coordenadas para Casa 4
+        agregarMarcador(19.4606, -99.1832, 'Casa 5', 'casa5.html');  // Coordenadas para Casa 5
+    </script>
+</body>
+</html>

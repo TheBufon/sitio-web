@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego: Visitando Casas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .casa {
+            display: inline-block;
+            margin: 10px;
+            padding: 20px;
+            width: 150px;
+            height: 150px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            font-size: 18px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .casa:hover {
+            background-color: #dcdcdc;
+        }
+        #mensaje {
+            font-size: 18px;
+            margin-top: 20px;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <h1>🏠 Juego: Visitando Casas 🏠</h1>
+    <p>Haz clic en una casa para visitar y descubrir qué sucede.</p>
+    <div class="casa" onclick="visitarCasa(1)">Casa 1</div>
+    <div class="casa" onclick="visitarCasa(2)">Casa 2</div>
+    <div class="casa" onclick="visitarCasa(3)">Casa 3</div>
+    <div id="mensaje">¡Haz clic en una casa para empezar!</div>
+
+    <script>
+        // Mensajes aleatorios para cada casa
+        const eventosCasa = {
+            1: [
+                "Un amable anciano te invitó a tomar té.",
+                "Un perro ladró y te asustó.",
+                "La casa está vacía. ¿Alguien vive aquí?",
+                "¡Entras y encuentras un tesoro escondido!"
+            ],
+            2: [
+                "Te ofrecen una deliciosa comida casera.",
+                "Un gato curioso te observa desde la ventana.",
+                "La casa está cerrada, pero huele a flores.",
+                "Te cuentan una historia misteriosa sobre el vecindario."
+            ],
+            3: [
+                "Un grupo de niños te invita a jugar.",
+                "Encuentras un libro antiguo lleno de secretos.",
+                "La casa tiene una decoración sorprendente.",
+                "Un loro te saluda: '¡Hola, visitante!'"
+            ]
+        };
+
+        // Función para visitar una casa
+        function visitarCasa(numeroCasa) {
+            const mensajes = eventosCasa[numeroCasa];
+            const mensajeAleatorio = mensajes[Math.floor(Math.random() * mensajes.length)];
+            document.getElementById("mensaje").textContent = mensajeAleatorio;
+        }
+    </script>
+</body>
+</html>
